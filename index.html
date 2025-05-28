@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Kalogirou | Web Developer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="bg-light py-5 text-center">
+      <div class="container">
+        <h1 class="display-4">Iris Kalogirou</h1>
+        <p class="lead">
+          I'm a passionate <span class="text-danger">web developer</span> from
+          Athens.
+        </p>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Resume</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <button id="toggle-dark" class="toggle-dark">🌓</button>
+    </header>
+
+    <main class="py-5 text-center">
+      <div class="container">
+        <h2>Welcome to my portfolio</h2>
+        <p class="text-muted">
+          Here you’ll find my latest projects, experience, and how to get in
+          touch.
+        </p>
+      </div>
+    </main>
+    <section
+      id="about"
+      class="py-16 bg-white text-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Back in 2020, when the world hit pause and we all got way too familiar
+          with our living room furniture, I decided to do something wild: I
+          taught myself to code. I would say it was the est decision I ever
+          made, but let’s be honest, it was more like a series of happy
+          accidents and late-night YouTube marathons.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed mt-4">
+          Today, I’m a web developer with a passion for clean code, creative
+          designs, and solving real-world problems — all sparked by a global
+          lockdown.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed mt-4">
+          When I’m not building websites, I’m probably working on new ideas or
+          searching for the new Marathon event. 👩‍💻✨🏃‍♀️
+        </p>
+      </div>
+    </section>
+
+    <footer class="bg-light text-center py-4">
+      &copy; 2025 Iris Kalogirou. All rights reserved.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      // Dark mode toggle functionality
+      document.getElementById("toggle-dark").addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>
