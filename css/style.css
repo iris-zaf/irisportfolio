@@ -49,7 +49,7 @@ header h1 {
 
 header p {
   font-size: 1.25rem;
-  color: #444;
+  color: var(--color-muted);
   margin-top: 0.5rem;
 }
 
@@ -85,7 +85,7 @@ main h2 {
 
 main p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-muted);
 }
 
 /* About Section */
@@ -155,22 +155,28 @@ body.dark-mode .dropdown-menu {
 }
 
 .toggle-dark {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1050;
-  background: transparent;
+  background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--color-text);
 }
 
+/* Reposition on larger screens */
+@media (min-width: 992px) {
+  .toggle-dark {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+  }
+}
 /* Fix Bootstrap light backgrounds in dark mode */
 body.dark-mode .bg-light {
   background-color: #181818 !important;
 }
 body.dark-mode .navbar-toggler {
-  background-color: #f9fafb !important;
+  background-color:  #181818 !important;
 }
 
 body.dark-mode .text-danger {
@@ -330,4 +336,96 @@ section {
 }
 .dark-mode #contact h2.text-3xl {
   color: #181818;
+}
+
+/* back to top */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 9999;
+  font-size: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+  background-color: var(--color-primary);
+}
+
+/*hamburger menu*/
+/* Hamburger button */
+.navbar-toggler {
+  border: 2px solid var(--color-border) !important;
+  border-radius: 50px !important;
+  background-color: #fff !important;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Icon inside the button */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(209, 44, 44, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Hover effect */
+.navbar-toggler:hover {
+  background-color: rgba(0, 123, 255, 0.05) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.navbar-collapse {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar-nav {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  padding: 0.3rem;
+  transition: color 0.3s;
+}
+.navbar-collapse.collapse.show {
+  animation: fadeInSlide 0.3s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body.dark-mode .navbar-collapse {
+  background-color: #222;
+}
+
+body.dark-mode .navbar-nav .nav-link {
+  color: #f9fafb;
+}
+/* Dark mode override */
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* Dark Mode styling */
+body.dark-mode #backToTop {
+  background-color: var(--color-muted);
+  color: #fff;
 }

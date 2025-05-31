@@ -16,53 +16,52 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="bg-light py-5 text-center">
-      <div class="container">
-        <h1 class="display-4">Iris Kalogirou</h1>
+    <header class="bg-light py-3">
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand fw-bold fs-3" href="#">Iris Kalogirou</a>
+        <button id="toggle-dark" class="toggle-dark ms-3">🌓</button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="text-center mt-3">
         <p class="lead">
           I'm a passionate <span class="text-danger">web developer</span> from
           Athens.
         </p>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div
-              class="collapse navbar-collapse justify-content-end"
-              id="navbarNav"
-            >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#resume">Resume</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
       </div>
-      <button id="toggle-dark" class="toggle-dark">🌓</button>
     </header>
 
     <main class="py-2 text-center">
@@ -286,7 +285,11 @@
                   </p>
                 </div>
                 <div class="text-center mt-3">
-                  <a href="#" class="btn btn-outline-primary">View Project</a>
+                  <a
+                    href="https://beekind.netlify.app"
+                    class="btn btn-outline-primary"
+                    >View Project</a
+                  >
                 </div>
               </div>
             </div>
@@ -370,6 +373,7 @@
     <footer class="bg-light text-center py-4">
       &copy; 2025 Iris Kalogirou. All rights reserved.
     </footer>
+    <button id="backToTop" title="Back to top">⬆</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -387,6 +391,22 @@
             moreText.style.display === "inline" ? "none" : "inline";
           btn.textContent =
             btn.textContent === "Read more" ? "Read less" : "Read more";
+        });
+      });
+      const backToTop = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
     </script>
