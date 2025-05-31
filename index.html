@@ -303,43 +303,47 @@
         </p>
 
         <form
-          name="contact"
+          action="https://formsubmit.co/iriskalogirou1@gmail.com"
           method="POST"
-          action="/thankyou"
-          class="mx-auto"
-          style="max-width: 600px"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="bot-field" />
+          <!-- Required: Add this to redirect to thank you page -->
+          <input
+            type="hidden"
+            name="_redirect"
+            value="https://irissportfolio.netlify.app/thankyou.html"
+          />
+
+          <!-- Disable CAPTCHA -->
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Spam protection (honeypot) -->
+          <input type="text" name="_honey" style="display: none" />
+
+          <!-- Optional: Anti-spam -->
           <div class="mb-3">
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="Your Name"
-              required
-            />
+            <input type="text" name="_honey" style="display: none" />
+          </div>
+          <div class="mb-3">
+            <input type="hidden" name="_captcha" value="false" />
+          </div>
+
+          <!-- Your visible fields -->
+          <div class="mb-3">
+            <input type="text" name="name" placeholder="Your Name" required />
           </div>
           <div class="mb-3">
             <input
               type="email"
               name="email"
-              class="form-control"
               placeholder="Your Email"
               required
             />
           </div>
-          <div class="mb-3">
-            <textarea
-              class="form-control"
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
 
