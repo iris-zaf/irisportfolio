@@ -312,9 +312,11 @@
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
           <div class="mb-3">
             <input
               type="text"
+              name="name"
               class="form-control"
               placeholder="Your Name"
               required
@@ -323,6 +325,7 @@
           <div class="mb-3">
             <input
               type="email"
+              name="email"
               class="form-control"
               placeholder="Your Email"
               required
@@ -331,6 +334,7 @@
           <div class="mb-3">
             <textarea
               class="form-control"
+              name="message"
               rows="5"
               placeholder="Your Message"
               required
