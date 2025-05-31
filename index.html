@@ -119,11 +119,13 @@
                 <small class="text-muted">ZAKCRET SPORTS</small>
               </h5>
               <p class="text-muted mb-1"><small>2024 – Present</small></p>
-              <p>
+              <p class="job-description">
                 Built responsive websites using HTML, CSS, JavaScript.
-                Collaborated with the team to integrate APIs. Working on
-                building custom modules for the company's website, mainly in
-                Opencart.
+                <span class="more-text">
+                  Collaborated with the team to integrate APIs. Working on
+                  building custom modules for the company's website, mainly in
+                  Opencart.</span
+                ><button class="read-more-btn">Read more</button>
               </p>
             </div>
             <div class="mb-3">
@@ -132,11 +134,12 @@
                 <small class="text-muted">ZAKCRET SPORTS</small>
               </h5>
               <p class="text-muted mb-1"><small>2022 – 2024</small></p>
-              <p>
+              <p class="job-description">
                 Assisted customers with online orders, provided product
-                information, and resolved issues. Collaborated with the web
-                development team to improve user experience and website
-                functionality.
+                information, and resolved issues.<span class="more-text">
+                  Collaborated with the web development team to improve user
+                  experience and website functionality.</span
+                ><button class="read-more-btn">Read more</button>
               </p>
             </div>
             <div class="mb-3">
@@ -182,11 +185,13 @@
               <p class="text-muted mb-1">
                 <small>Metropolitan College of Athens, 2020 – 2022</small>
               </p>
-              <p>
+              <p class="job-description">
                 Studied maritime business, focusing on logistics and
-                transportation management. I also completed a thesis on "FACTORS
-                THAT AFFECT DEMAND FOR CRUDE OIL IN VARIOUS OPEC EXPORTERS:
-                COVID-19, RUSSIAN INVASION, ENVIRONMENTAL REGULATIONS".
+                transportation management.<span class="more-text">
+                  I also completed a thesis on "FACTORS THAT AFFECT DEMAND FOR
+                  CRUDE OIL IN VARIOUS OPEC EXPORTERS: COVID-19, RUSSIAN
+                  INVASION, ENVIRONMENTAL REGULATIONS".</span
+                ><button class="read-more-btn">Read more</button>
               </p>
             </div>
           </div>
@@ -302,51 +307,50 @@
           on social media.
         </p>
 
-        <form
-          action="https://formsubmit.co/iriskalogirou1@gmail.com"
-          method="POST"
-        >
-          <!-- Required: Add this to redirect to thank you page -->
-          <input
-            type="hidden"
-            name="_redirect"
-            value="https://irissportfolio.netlify.app/thankyou.html"
-          />
-
-          <!-- Disable CAPTCHA -->
-          <input type="hidden" name="_captcha" value="false" />
-          <!-- Spam protection (honeypot) -->
-          <input type="text" name="_honey" style="display: none" />
-
-          <!-- Optional: Anti-spam -->
-          <div class="mb-3">
-            <input type="text" name="_honey" style="display: none" />
-          </div>
-          <div class="mb-3">
-            <input type="hidden" name="_captcha" value="false" />
-          </div>
-
-          <!-- Your visible fields -->
-          <div class="mb-3">
-            <input type="text" name="name" placeholder="Your Name" required />
-          </div>
-          <div class="mb-3">
+        <div class="form-wrapper mx-auto">
+          <form
+            action="https://formsubmit.co/iriskalogirou1@gmail.com"
+            method="POST"
+          >
+            <!-- Hidden inputs -->
             <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
+              type="hidden"
+              name="_redirect"
+              value="https://irissportfolio.netlify.app/thankyou.html"
             />
-          </div>
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            required
-          ></textarea>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display: none" />
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-
+            <!-- Styled input fields -->
+            <div class="mb-3">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                name="message"
+                class="form-control"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
         <div class="mt-4">
           <a
             href="mailto:iriskalogirou1@gmail.com"
@@ -374,6 +378,16 @@
       // Dark mode toggle functionality
       document.getElementById("toggle-dark").addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
+      });
+
+      document.querySelectorAll(".read-more-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const moreText = btn.previousElementSibling;
+          moreText.style.display =
+            moreText.style.display === "inline" ? "none" : "inline";
+          btn.textContent =
+            btn.textContent === "Read more" ? "Read less" : "Read more";
+        });
       });
     </script>
   </body>
