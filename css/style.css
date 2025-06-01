@@ -57,6 +57,11 @@ header p .highlight {
   color: #d12c2c;
   font-weight: bold;
 }
+/*glass effect */
+header.sticky-top {
+  background-color: #f0f2f5;
+  backdrop-filter: blur(6px);
+}
 
 /* Navbar */
 .navbar-nav .nav-link {
@@ -176,7 +181,7 @@ body.dark-mode .bg-light {
   background-color: #181818 !important;
 }
 body.dark-mode .navbar-toggler {
-  background-color:  #181818 !important;
+  background-color: #181818 !important;
 }
 
 body.dark-mode .text-danger {
@@ -383,7 +388,6 @@ section {
 }
 
 .navbar-collapse {
-  background-color: #fff;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
